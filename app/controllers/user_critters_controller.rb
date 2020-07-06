@@ -1,0 +1,2 @@
+class UserCrittersController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class CrittersController < ApplicationController
+end
