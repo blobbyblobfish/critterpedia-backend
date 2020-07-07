@@ -7,7 +7,9 @@ class UserCrittersController < ApplicationController
     end
 
     private
+
     def user_critter_params
         params.permit(:critter_id)
     end
+    
 end
