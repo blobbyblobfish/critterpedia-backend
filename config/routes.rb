@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/critters/fish', to: "critters#fish_index", as: "fish_path"
   get '/critters/sea-creatures', to: "critters#sea_creature_index", as: "sea_creatures_path"
 
+  get '/users/', to: 'users#index'
   get '/users/stay_logged_in', to: 'users#stay_logged_in'
   get '/users/:id', to: 'users#show'
   patch '/users/:id', to: 'users#update'
