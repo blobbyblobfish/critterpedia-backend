@@ -1,4 +1,5 @@
 class UserCritterSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :critter
+  
   belongs_to :critter
 end
