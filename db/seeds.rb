@@ -23,7 +23,7 @@ puts "Creating fish"
     response = Net::HTTP.get_response(uri)
     fishJson = JSON.parse(response.body)
 
-    Critter.create(category: "fish", name: fishJson["name"]["name-USen"], img_url: fishJson["icon_uri"], 
+    Critter.create(category: "fish", game_id: fishJson["id"], name: fishJson["name"]["name-USen"], img_url: fishJson["icon_uri"], 
     nh_available_months: fishJson["availability"]["month-array-northern"],
     sh_available_months: fishJson["availability"]["month-array-southern"],
     available_times: fishJson["availability"]["time-array"])
@@ -41,7 +41,7 @@ puts "Creating bugs"
     response = Net::HTTP.get_response(uri)
     bugJson = JSON.parse(response.body)
 
-    Critter.create(category: "bug", name: bugJson["name"]["name-USen"], img_url: bugJson["icon_uri"],
+    Critter.create(category: "bug", game_id: bugJson["id"], name: bugJson["name"]["name-USen"], img_url: bugJson["icon_uri"],
     nh_available_months: bugJson["availability"]["month-array-northern"],
     sh_available_months: bugJson["availability"]["month-array-southern"],
     available_times: bugJson["availability"]["time-array"])
@@ -59,7 +59,7 @@ puts "Creating sea creatures"
     response = Net::HTTP.get_response(uri)
     seaJson = JSON.parse(response.body)
 
-    Critter.create(category: "sea_creature", name: seaJson["name"]["name-USen"], img_url: seaJson["icon_uri"],
+    Critter.create(category: "sea_creature", game_id: seaJson["id"], name: seaJson["name"]["name-USen"], img_url: seaJson["icon_uri"],
     nh_available_months: seaJson["availability"]["month-array-northern"],
     sh_available_months: seaJson["availability"]["month-array-southern"],
     available_times: seaJson["availability"]["time-array"])

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:stay_logged_in]
+    before_action :find, only: [:destroy, :update]
 
     def index
         @users = User.all
@@ -7,12 +8,10 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(params[:id])
         render json: @user
     end
 
     def destroy
-        @user = User.find(params[:id])
         @user.destroy
         render json: @user
     end
@@ -58,6 +57,15 @@ class UsersController < ApplicationController
         render json: {error: "A user with that username exists."}
       end
 
+    end
+
+    def update
+        @user.update(user_params)
+        render json: @user
+    end
+
+    def find
+        @user = User.find(params[:id])
     end
 
     private

@@ -5,7 +5,11 @@ class CrittersController < ApplicationController
             critter.category === "bug"
         end
 
-        render json: @bugs
+        sorted_bugs = @bugs.sort_by do 
+            |bug| bug.game_id
+        end
+
+        render json: sorted_bugs
     end
 
     def fish_index
@@ -13,7 +17,11 @@ class CrittersController < ApplicationController
             critter.category === "fish"
         end
 
-        render json: @fish
+        sorted_fish = @fish.sort_by do |fish|
+            fish.game_id
+        end
+
+        render json: sorted_fish
     end
 
     def sea_creature_index
@@ -21,7 +29,11 @@ class CrittersController < ApplicationController
             critter.category === "sea_creature"
         end
 
-        render json: @sea_creatures
+        sorted_sea_creatures = @sea_creatures.sort_by do |sea_creature|
+            sea_creature.game_id
+        end
+
+        render json: sorted_sea_creatures
     end
 
 end

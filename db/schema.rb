@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_160222) do
+ActiveRecord::Schema.define(version: 2020_07_08_220436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_160222) do
     t.integer "nh_available_months", array: true
     t.integer "sh_available_months", array: true
     t.integer "available_times", array: true
+    t.integer "game_id"
   end
 
   create_table "user_critters", force: :cascade do |t|
