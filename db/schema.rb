@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_135445) do
+ActiveRecord::Schema.define(version: 2020_07_08_160222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_135445) do
     t.string "category"
     t.string "name"
     t.string "img_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "nh_available_months", array: true
     t.integer "sh_available_months", array: true
     t.integer "available_times", array: true

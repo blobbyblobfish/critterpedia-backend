@@ -6,6 +6,12 @@ class UserCrittersController < ApplicationController
         render json: @user_critter
     end
 
+    def destroy
+        @user_critter = UserCritter.find(params[:id])
+        @user_critter.destroy
+        render json: @user_critter
+    end
+
     private
 
     def user_critter_params

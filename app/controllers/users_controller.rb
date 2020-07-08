@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         }
 
       else
-        render json: {error: "You messed up."}
+        render json: {error: "Incorrect username or password."}
       end
 
     end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
         }
 
       else
-        render json: {error: "A user with that username exists"}
+        render json: {error: "A user with that username exists."}
       end
 
     end
