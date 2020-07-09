@@ -54,39 +54,19 @@ class UsersController < ApplicationController
         }
 
       elsif @user.errors.messages[:username]
-        if @user.errors.messages[:password] && @user.errors.messages[:hemisphere]
-            render json: {
-                error: "Username #{@user.errors.messages[:username][0]}. Password #{@user.errors.messages[:password][0] || "cannot be entered without valid username"}. Hemisphere #{@user.errors.messages[:hemisphere][0]}."
-            }
-        elsif @user.errors.messages[:password]
-            render json: {
-                error: "Username #{@user.errors.messages[:username][0]}. Password #{@user.errors.messages[:password][0]}."
-            }
-        elsif @user.errors.messages[:hemisphere]
-            render json: {
-                error: "Username #{@user.errors.messages[:username][0]}. Hemisphere #{@user.errors.messages[:password][0]}."
-            }  
-        else
-            render json: {
-                error: "Username #{@user.errors.messages[:username][0]}."
-            }
-        end
+        render json: {
+            error: "Username #{@user.errors.messages[:username][0]}."
+        }
 
       elsif @user.errors.messages[:password]
-            if @user.errors.messages[:hemisphere]
-                render json: {
-                    error: "Password #{@user.errors.messages[:password][0]}. Hemisphere #{@user.errors.messages[:hemisphere][0]}."
-                }
-            else
-                render json: {
-                    error: "Password #{@user.errors.messages[:password][0]}."
-                } 
-            end
+        render json: {
+            error: "Password #{@user.errors.messages[:password][0]}."
+        } 
 
       elsif @user.errors.messages[:hemisphere]
-            render json: {
-                error: "Hemisphere #{@user.errors.messages[:hemisphere][0]}."
-            }
+        render json: {
+            error: "Hemisphere #{@user.errors.messages[:hemisphere][0]}."
+        }
       end
 
     end
