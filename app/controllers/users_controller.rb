@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     end
 
     def create
-      @user = User.create(user_params)
+      @user = User.create(create_user_params)
 
       if @user.valid?
         wristband = encode_token({user_id: @user.id})
@@ -53,19 +53,9 @@ class UsersController < ApplicationController
           token: wristband
         }
 
-      elsif @user.errors.messages[:username]
+      else 
         render json: {
-            error: "Username #{@user.errors.messages[:username][0]}."
-        }
-
-      elsif @user.errors.messages[:password]
-        render json: {
-            error: "Password #{@user.errors.messages[:password][0]}."
-        } 
-
-      elsif @user.errors.messages[:hemisphere]
-        render json: {
-            error: "Hemisphere #{@user.errors.messages[:hemisphere][0]}."
+            error: "Error."
         }
       end
 
@@ -73,8 +63,15 @@ class UsersController < ApplicationController
 
 
     def update
-        @user.update(user_params)
-        render json: @user
+        @user.update(update_user_params)
+
+        if @user.valid? 
+            render json: @user
+
+        else
+            render json: {error: "Error #{@user.errors.messages}"}
+        end 
+
     end
 
     def find
@@ -83,7 +80,11 @@ class UsersController < ApplicationController
 
     private
 
-    def user_params
+    def create_user_params
+        params.permit(:username, :hemisphere, :password)
+    end
+
+    def update_user_params
       params.require(:user).permit(:username, :hemisphere)
     end
 
