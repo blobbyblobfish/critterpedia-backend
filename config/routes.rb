@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/songs', to: "songs#index", as: "songs_path"
   get '/critters/bugs', to: "critters#bug_index", as: "bugs_path"
   get '/critters/fish', to: "critters#fish_index", as: "fish_path"
   get '/critters/sea-creatures', to: "critters#sea_creature_index", as: "sea_creatures_path"
