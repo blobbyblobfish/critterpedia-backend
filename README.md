@@ -2,7 +2,7 @@
 
 ### Summary
 
-Critterpedia is a web app that allows Nintendo Animal Crossing New Horizons enthusiasts to catalog their bugs, fish, and sea creatures.
+Critterpedia is a web app that allows Nintendo Animal Crossing New Horizons enthusiasts to catalog bugs, fish, and sea creatures.
 
 ### Features
 * Any visitor to the site can view a list of searchable bugs, fish, and sea creatures in Animal Crossing New Horizons.
@@ -15,6 +15,6 @@ Critterpedia is a web app that allows Nintendo Animal Crossing New Horizons enth
 * Rails API backend. PostgreSQL database.
   * ACNH API (http://acnhapi.com/), Active Model Serializers, bcrypt, JWT, Rack CORS, dotenv.
   
-###### Repositories.
+### Repositories.
 - [Link to frontend](https://github.com/blobbyblobfish/critterpedia-frontend/)
 - You are reading this on the backend README.
