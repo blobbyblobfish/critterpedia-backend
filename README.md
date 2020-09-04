@@ -5,7 +5,7 @@
 Critterpedia is a web app that allows Nintendo Animal Crossing New Horizons enthusiasts to catalog bugs, fish, and sea creatures.
 
 ### Features
-* Any visitor to the site can view a list of searchable bugs, fish, and sea creatures in Animal Crossing New Horizons.
+* Any visitor to the site can view a list of searchable bugs, fish, and sea creatures.
 * Authenticated users can catalog which critters they have caught and filter the critter lists by availability and status.
 * Background music can be controlled using a mock media player in the navigation bar.
 
