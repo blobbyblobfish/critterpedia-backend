@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
         if auth_header
             token = auth_header
             begin
-            JWT.decode(ENV["SECRET"], true, algorithm: ENV["ALGORITHM"])
+            JWT.decode(token, ENV["SECRET"], true, algorithm: ENV["ALGORITHM"])
             rescue JWT::DecodeError
             nil
             end
